@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AchieversIT-CovidRegistration</title>
+    <link rel="stylesheet" href="Home Screen Covid-19.css" type="text/css">
+    <script src="https://kit.fontawesome.com/bd0f8e1528.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</head>
+<body>
+
+<!-- Main Navbar Starts Here -->
+<div class="navbar">
+    <img src="../documents/ait.jpg" class="logo" alt="LOGO">
+    <div class="nav">
+        <a href="" class="navhover">Register</a>
+        <a href="" class="navhover">Corporate Training</a>
+        <a href="" class="navhover">Placements Page</a>
+        <a href="" class="navhover">Reviews</a>
+        <a href="" class="navhover">Blog</a>
+    </div>
+    </div>
+<!--Main Navbar Ends Here -->
+
+    <!-- Covid-19 vaccine main page start -->
+        <h1 class="heading_big">COVID-19 Vaccine Registration</h1>
+        <hr>
+        <a href="#"><button class="plus_button" id="myBtn"><i class="fas fa-plus-circle"></i> Register</button></a>
+
+    <table  class="section">
+        <thead>
+          <tr>
+            <th>FName</th>
+            <th>LName</th>
+            <th>Aadhar</th>
+            <th>Contact</th>
+            <th>DOB</th>
+            <th>Gender</th>
+            <th>c_history</th>
+            <th>Symptoms</th>
+            <th>Address</th>
+            <th>Landmark</th>
+            <th>PinCode</th>
+            <th>State</th>
+            <th colspan="2">Action</th>
+          </tr>
+        </thead>
+      <tbody id="sect">
+
+      </tbody>
+    </table>
+    <!-- Modal Start -->
+    <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <p class="vaccine"><b>Register Covid-19 Vaccine</b></p>
+          <hr>
+          <form onsubmit="onLogin(event)">
+            <div class="row">
+              <div class="col-1-25">
+                <label for="fname"><b>Name</b></label>
+                <input type="text" id="fname" name="firstname" placeholder="Enter First Name"  oninvalid="this.setCustomValidity('Please Enter First Name')" oninput="this.setCustomValidity('')">
+              </div>
+              <div class="col-2-25">
+                <input type="text" id="lname" name="lastname" placeholder="Enter Last Name"  oninvalid="this.setcustomValidity('Please Enter Last Name')" oninput="this.setCustomValidity('')">
+              </div>
+              <div class="col-1-50">
+                <label for="Aadhar"><b>Aadhar No.</b></label>
+                <input type="text" id="aadhar" name="aadhar" placeholder="Enter 12 Digit Aadhar No."  pattern="[0-9]{12}" oninvalid="this.setCustomValidity('Please Enter 12 Digit Aadhar No.')" oninput="this.setCustomValidity('')">
+              </div>
+              <div class="col-2-50">
+                <label for="contact"><b>Contact Number</b></label>
+                <input type="text" id="number" name="number" placeholder="Enter Contact Number"  pattern="[0-9]{10}" oninvalid="this.setCustomValidity('Enter Contact Number')" oninput="this.setCustomValidity('')">
+              </div>
+              <div class="col-3-50">
+                <label for="contact"><b>Date Of Birth</b></label> <br>
+                <input type="date" id="date" name="date"  oninvalid="this.setCustomValidity('Please Enter DOB')" oninput="this.setCustomValidity('')">
+              </div>
+              <div class="col-4-50">
+                <label for="gender"><b>Gender</b></label> <br>
+                <input type="radio" id="radio" name="gender" value="Male">Male &nbsp;
+                <input type="radio" id="radio" name="gender" value="FeMale">Fe-Male &nbsp;
+                <input type="radio" id="radio" name="gender" value="Other">Other
+              </div>
+              <div class="col-5-50">
+                <label for="diagnised"><b>Have You Been Diagnised For Covid-19 ?</b></label> <br>
+                <input type="radio" id="radio" name="diagnised" value="Yes" >Yes &nbsp;
+                <input type="radio" id="radio" name="diagnised" value="No" >No
+              </div>
+              <div class="col-100" >
+                <label for="symptoms"><b>Please Check All Symptoms That Apply ?</b></label><br>
+                <input type="checkbox" name="symptoms" value="Loss Of Taste / Smell" > Loss Of Taste / Smell &nbsp;
+                <input type="checkbox" name="symptoms" value="Difficullty_Breathing" > Difficullty Breathing &nbsp;
+                <input type="checkbox" name="symptoms" value="Cough" > Cough &nbsp;
+                <input type="checkbox" name="symptoms" value="Running Nose" > Running Nose &nbsp;
+                <input type="checkbox" name="symptoms" value="BodyPains" > Body Pains &nbsp;
+                <input type="checkbox" name="symptoms" value="Headache" > Headache &nbsp; 
+                <input type="checkbox" name="symptoms" value="Sore Throat" > Sore Throat &nbsp;
+                <input type="checkbox" name="symptoms" value="Fever" > Fever
+              </div>
+              <div class="col-100">
+                <label for="address"><b>Address</b></label>
+              </div>
+              <div class="col-50-1">
+                <input type="text" id="street-address" name="street_address" placeholder="Street Address"  oninvalid="this.setCustomValidity('Please Enter Street Address')" oninput="this.setCustomValidity('')">
+              </div>
+              <div class="col-50-2">
+                <input type="text" id="landmark" name="landmark" placeholder="Landmark"  oninvalid="this.setCustomValidity('Please Enter Landmark')" oninput="this.setCustomValidity('')">
+              </div>
+              <div class="col-50-3">
+                <input type="text" id="pincode" name="address" placeholder="Pincode"  oninvalid="this.setCustomValidity('Please Enter Pincode')" oninput="this.setCustomValidity('')">
+              </div>
+              <div class="col-50-4">
+                <input type="text" id="state" name="state" placeholder="State"  oninvalid="this.setCustomValidity('Please Enter State')" oninput="this.setCustomValidity('')">
+              </div>
+            </div>
+            <div class="col-100-1">
+              <input type="checkbox" id="checkbox" >Check Me Out
+            </div>
+            <div class="col-100-1">
+              <button class="button info" type="submit" onclick="myFunction()">Submit</button>
+              <button class="button danger" type="reset">Reset</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    <!-- Modal Ends Here -->
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <!-- Footer Is Here -->
+    <div class="footer-sticky">
+        <div class="whatsapp">
+          <i class="fab fa-whatsapp fa-2x"></i>
+        </div>
+        <div class="phone-call">
+          <i class="fas fa-phone-volume fa-2x"></i>
+          Call Us On: +91 8431-040-457
+       </div>
+        <div class="request-mail">
+          <i class="far fa-envelope fa-2x"></i>
+         Request A Call Back
+        </div>
+      </div>  
+      <script src="java.js"></script>
+</body>
+</html>
